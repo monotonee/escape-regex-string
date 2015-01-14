@@ -10,10 +10,6 @@
 
 'use strict'
 
-var dependencies = {
-  is: require('is')
-};
-
 var defaultEscapeCharsRegex =  /[-|\\{}()[\]^$+*?.]/g;
 
 /**
@@ -23,19 +19,18 @@ var defaultEscapeCharsRegex =  /[-|\\{}()[\]^$+*?.]/g;
  * @return string The escaped regex pattern string.
  */
 var escapeRegexString = function(unescapedString, escapeCharsRegex) {
-  // Validate unescaped pattern string.
-  var unescapedStringType = (typeof unescapedString).toLowerCase();
-  if (unescapedStringType !== 'string') {
-    throw new TypeError('Argument 1: expected string. Received ' + unescapedStringType);
+  // Validate arguments.
+  if (Object.prototype.toString.call(unescapedString) !== '[object String]') {
+    throw new TypeError('Argument 1 should be a string.');
   }
-  
-  // Validate optional RegEx object. This tequnique is debatable.
-  var escapeCharsRegexTypeescapeCharsRegexType = (typeof escapeCharsRegex).toLowerCase();
-  if (escapeCharsRegexType === 'undefined' || escapeCharsRegex === null) {
+  if (escapeCharsRegex === undefined) {
     escapeCharsRegex = defaultEscapeCharsRegex;
   }
-  else if (escapeCharsRegex.constructor.name !== 'RegExp') {
-    throw new TypeError('Argument 2: expected RegEx object . Received ' + escapeCharsRegexType);
+  else if (Object.prototype.toString.call(escapeCharsRegex) !== '[object RegExp]') {
+    throw new TypeError('Argument 2 should be a RegExp object.');
   }
   
+  // Escape the string.
+  return unescapedString.replace(escapeCharsRegex, '\\$&');
 }
+

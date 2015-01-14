@@ -20,8 +20,5 @@
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/monotonee/escape-regex-string/issues"
-  },
-  "dependencies": {
-    "is": "^2.2.0"
   }
 }
