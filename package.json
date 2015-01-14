@@ -1,0 +1,27 @@
+{
+  "name": "escape-regex-string",
+  "version": "0.0.0",
+  "description": "An extremely simple module to escape a string literal in preparation for passing to the RegExp constructor.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/monotonee/escape-regex-string.git"
+  },
+  "keywords": [
+    "regex",
+    "RegExp",
+    "escape",
+    "string"
+  ],
+  "author": "monotonee <monotonee@users.noreply.github.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/monotonee/escape-regex-string/issues"
+  },
+  "dependencies": {
+    "is": "^2.2.0"
+  }
+}
