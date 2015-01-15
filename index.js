@@ -1,11 +1,10 @@
 /**
- * @file
- * Defines and exports a simple function that will escape a string literal for use
- * as an argument in the standard JS RegExp object constructor function.
- * 
- * @note
- * These documentation blocks can be parsed by the "Doxygen" documentation generator.
- * @see http://stack.nl/~dmitri/doxygen
+ * @file Exports a simple function that will escape a string literal for use as an
+ * argument in the standard JS RegExp object constructor.
+ * @module escape-regex-string
+ * @author monotonee <monotonee@users.noreply.github.com>
+ * @version 0.0.0
+ * @license MIT
  */
 
 'use strict'
@@ -13,10 +12,12 @@
 var defaultEscapeCharsRegex =  /[-|\\{}()[\]^$+*?.]/g;
 
 /**
- * @param patternString The string containing a regex pattern that needs to be escaped.
- * @param charactersToEscapeRegexPattern An optional RegEx pattern containing a set 
- *   of characters to escape. If not passed, will be set to default.
- * @return string The escaped regex pattern string.
+ * Escapes a string literal for use as an argument in the standard JS RegExp object constructor
+ * @alias module:escape-regex-string
+ * @param {string} patternString The string containing a regex pattern that needs to be escaped.
+ * @param {RegExp} [escapeCharsRegex] An optional RegEx pattern containing a set of characters 
+ * to escape. If not passed, value will be set to default.
+ * @return {string} The escaped regex pattern string.
  */
 function escapeRegexString(unescapedString, escapeCharsRegex) {
   // Validate arguments.
@@ -35,8 +36,12 @@ function escapeRegexString(unescapedString, escapeCharsRegex) {
 }
 
 /**
- * Define a read-only property on the function object to contain default RegExp pattern.
- * This allows the user to utilize the pattern for his or her own purpose.
+ * @name escapeRegexString.defaultEscapeCharsRegex
+ * A read-only property that contains the default escape character RegExp instance.
+ * The value of this property is the value used when the optional second argument
+ * is omitted in a call to {@link module:escape-regex-string}.
+ * @readonly
+ * @static
  */
 Object.defineProperty(
   escapeRegexString,
@@ -49,7 +54,4 @@ Object.defineProperty(
   }
 );
 
-/**
- * Expose escape-regex-string
- */
 module.exports = escapeRegexString;
