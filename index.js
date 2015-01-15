@@ -18,7 +18,7 @@ var defaultEscapeCharsRegex =  /[-|\\{}()[\]^$+*?.]/g;
  *   of characters to escape. If not passed, will be set to default.
  * @return string The escaped regex pattern string.
  */
-var escapeRegexString = function(unescapedString, escapeCharsRegex) {
+function escapeRegexString(unescapedString, escapeCharsRegex) {
   // Validate arguments.
   if (Object.prototype.toString.call(unescapedString) !== '[object String]') {
     throw new TypeError('Argument 1 should be a string.');
@@ -34,3 +34,22 @@ var escapeRegexString = function(unescapedString, escapeCharsRegex) {
   return unescapedString.replace(escapeCharsRegex, '\\$&');
 }
 
+/**
+ * Define a read-only property on the function object to contain default RegExp pattern.
+ * This allows the user to utilize the pattern for his or her own purpose.
+ */
+Object.defineProperty(
+  escapeRegexString,
+  'defaultEscapeCharsRegex',
+  {
+    configurable: false,
+    enumerable: true,
+    value: defaultEscapeCharsRegex,
+    writable: false
+  }
+);
+
+/**
+ * Expose escape-regex-string
+ */
+module.exports = escapeRegexString;
