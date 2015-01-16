@@ -10,7 +10,7 @@ DOC_DEST=./jsdoc
 
 .PHONY: test
 
-all: npm-check-updates lint style test
+all: lint style test npm-check-updates
 
 clean:
 	rm -R $(DOC_DEST)
