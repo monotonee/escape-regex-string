@@ -39,9 +39,10 @@ function escapeRegexString(unescapedString, escapeCharsRegex) {
  * @name escapeRegexString.defaultEscapeCharsRegex
  * A read-only property that contains the default escape character RegExp instance.
  * The value of this property is the value used when the optional second argument
- * is omitted in a call to {@link module:escape-regex-string}.
+ * is omitted in a call to {@link module:escape-regex-string}. JSDoc fails to parse this properly.
  * @readonly
  * @static
+ * @type {RegExp}
  */
 Object.defineProperty(
   escapeRegexString,

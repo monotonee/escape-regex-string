@@ -1,6 +1,6 @@
 var dependencies = {
   assert: require('assert'),
-  escapeRegexString: require('../index'),
+  escapeRegexString: require('../index')
 };
 
 describe('escape-regex-string', function() {
@@ -25,11 +25,7 @@ describe('escape-regex-string', function() {
   });
 
   it('should not accept invalid arguments', function() {
-    /**
-     * Define locally-scoped function to catch TypeError exceptions in the following tests.
-     * @param exceptionObject Object constructed by Error or a descendant.
-     * @return undefined
-     */
+    // Define locally-scoped function to catch TypeError exceptions in the following tests.
     function rethrowExceptionIfNotTypeError(exceptionObject) {
       // Depending on short-circuit evaluation in condition.
       if (Object.prototype.toString.call(exceptionObject) !== '[object Error]' ||
