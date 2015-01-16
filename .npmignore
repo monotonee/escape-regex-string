@@ -1,0 +1,36 @@
+# Logs
+logs
+*.log
+
+# Runtime data
+pids
+*.pid
+*.seed
+
+# Grunt intermediate storage (http://gruntjs.com/creating-plugins#storing-task-files)
+.grunt
+
+# Compiled binary addons (http://nodejs.org/api/addons.html)
+build/Release
+
+# Config files
+.git*
+.jscsrc
+.jshintrc
+.npmignore
+.travis.yml
+
+# Dev directories
+benchmarks/
+coverage/
+docs/
+examples/
+support/
+test/
+
+# Misc
+Contributing.md
+makefile
+
+# IDE files
+.DS_Store
