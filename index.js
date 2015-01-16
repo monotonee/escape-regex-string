@@ -7,9 +7,9 @@
  * @license MIT
  */
 
-'use strict'
+'use strict';
 
-var defaultEscapeCharsRegex =  /[-|\\{}()[\]^$+*?.]/g;
+var defaultEscapeCharsRegex =  /[\-|\\{}()\[\]\^$+*?.]/g;
 
 /**
  * Escapes a string literal for use as an argument in the standard JS RegExp object constructor
