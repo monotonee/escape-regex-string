@@ -15,9 +15,10 @@ var defaultEscapeCharsRegex =  /[-|\\{}()[\]^$+*?.]/g;
  * Escapes a string literal for use as an argument in the standard JS RegExp object constructor
  * @alias module:escape-regex-string
  * @param {string} patternString The string containing a regex pattern that needs to be escaped.
- * @param {RegExp} [escapeCharsRegex] An optional RegEx pattern containing a set of characters 
+ * @param {RegExp} [escapeCharsRegex] An optional RegEx pattern containing a set of characters
  * to escape. If not passed, value will be set to default.
  * @return {string} The escaped regex pattern string.
+ * @see {@link https://github.com/jscs-dev/node-jscs/issues/778}
  */
 function escapeRegexString(unescapedString, escapeCharsRegex) {
   // Validate arguments.
@@ -26,11 +27,10 @@ function escapeRegexString(unescapedString, escapeCharsRegex) {
   }
   if (escapeCharsRegex === undefined) {
     escapeCharsRegex = defaultEscapeCharsRegex;
-  }
-  else if (Object.prototype.toString.call(escapeCharsRegex) !== '[object RegExp]') {
+  } else if (Object.prototype.toString.call(escapeCharsRegex) !== '[object RegExp]') {
     throw new TypeError('Argument 2 should be a RegExp object.');
   }
-  
+
   // Escape the string.
   return unescapedString.replace(escapeCharsRegex, '\\$&');
 }

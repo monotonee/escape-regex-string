@@ -4,26 +4,26 @@ var dependencies = {
 };
 
 describe('escape-regex-string', function() {
-  
+
   it('should escape regular expression tokens within a string literal', function() {
     dependencies.assert.strictEqual(
-      dependencies.escapeRegexString('- | \\ { } ( ) [ ] ^ $ + * ? .'), 
+      dependencies.escapeRegexString('- | \\ { } ( ) [ ] ^ $ + * ? .'),
       '\\- \\| \\\\ \\{ \\} \\( \\) \\[ \\] \\^ \\$ \\+ \\* \\? \\.'
     );
     dependencies.assert.strictEqual(
-      dependencies.escapeRegexString('(Phobetron pithecium)'), 
+      dependencies.escapeRegexString('(Phobetron pithecium)'),
       '\\(Phobetron pithecium\\)'
     );
   });
-  
+
   it('should use optional RegExp argument when passed instead of default', function() {
     // Remove the hyphen character from the regex pattern.
     dependencies.assert.strictEqual(
-      dependencies.escapeRegexString('- | \\ { } ( ) [ ] ^ $ + * ? .', /[|\\{}()[\]^$+*?.]/g), 
+      dependencies.escapeRegexString('- | \\ { } ( ) [ ] ^ $ + * ? .', /[|\\{}()[\]^$+*?.]/g),
       '- \\| \\\\ \\{ \\} \\( \\) \\[ \\] \\^ \\$ \\+ \\* \\? \\.'
     );
   });
-  
+
   it('should not accept invalid arguments', function() {
     /**
      * Define locally-scoped function to catch TypeError exceptions in the following tests.
@@ -32,13 +32,13 @@ describe('escape-regex-string', function() {
      */
     function rethrowExceptionIfNotTypeError(exceptionObject) {
       // Depending on short-circuit evaluation in condition.
-      if (Object.prototype.toString.call(exceptionObject) !== '[object Error]'
-        || exceptionObject instanceof TypeError === false
+      if (Object.prototype.toString.call(exceptionObject) !== '[object Error]' ||
+        exceptionObject instanceof TypeError === false
       ) {
         throw exceptionObject;
       }
     }
-    
+
     // Attempt to pass invalid first argument.
     try {
       dependencies.escapeRegexString(42);
@@ -56,24 +56,21 @@ describe('escape-regex-string', function() {
       rethrowExceptionIfNotTypeError(exceptionObject);
     }
   });
-  
+
   describe('.defaultEscapeCharsRegex', function() {
-    
+
     it('should be a non-configurable property', function() {
       dependencies.escapeRegexString.defaultEscapeCharsRegex = 3.14;
-      dependencies.assert.notStrictEqual(
-        dependencies.escapeRegexString.defaultEscapeCharsRegex,
-        3.14
-      );
+      dependencies.assert.notStrictEqual(dependencies.escapeRegexString.defaultEscapeCharsRegex, 3.14);
     });
-    
+
     it('should contain a readable RegExp object', function() {
       dependencies.assert.strictEqual(
         Object.prototype.toString.call(dependencies.escapeRegexString.defaultEscapeCharsRegex),
         '[object RegExp]'
       );
     });
-    
+
   });
-  
+
 });
