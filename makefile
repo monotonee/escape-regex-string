@@ -6,7 +6,7 @@ MODULE=./index.js
 TESTS=$(wildcard ./test/*.js)
 ALL_SRC=$(MODULE) $(TESTS)
 
-DOC_DEST=./jsdoc
+DOC_DEST=./docs
 
 .PHONY: test
 
