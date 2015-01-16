@@ -1,6 +1,6 @@
 {
   "name": "escape-regex-string",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "An extremely simple module to escape a string literal in preparation for passing to the RegExp constructor.",
   "main": "index.js",
   "repository": {
