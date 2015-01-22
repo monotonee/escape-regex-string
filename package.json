@@ -21,8 +21,12 @@
   "devDependencies": {
     "jscs": "^1.10.0",
     "jsdoc": "^3.3.0-alpha13",
-    "jshint": "^2.5.11",
+    "jshint": "^2.6.0",
     "mocha": "^2.1.0",
     "npm-check-updates": "^1.5.0"
+  },
+  "scripts": {
+    "generate-docs": "make docs",
+    "test": "make all"
   }
 }
