@@ -15,7 +15,7 @@ all: lint style test npm-check-updates
 clean:
 	rm -R $(DOC_DEST)
 
-doc: $(BIN)/jsdoc $(ALL_SRC)
+docs: $(BIN)/jsdoc $(ALL_SRC)
 	$< $(ALL_SRC) --verbose --destination $(DOC_DEST)
 
 lint: $(BIN)/jshint $(ALL_SRC)
