@@ -1,5 +1,5 @@
 # escape-regex-string
-An extremely simple Node module to escape a string literal in preparation for passing to the RegExp constructor.
+Escapes a string literal for use as an argument in the standard RegExp constructor.
 
 ## Interface
 #### escape-regex-string
@@ -7,7 +7,7 @@ An extremely simple Node module to escape a string literal in preparation for pa
 (require('escape-regex-string'))(patternString[, escapeCharsRegex])
 ```
 * patternString String
-* escapeCharsRegex Regexp
+* escapeCharsRegex RegExp
   * Defaults to value of member escape-regex-string.defaultEscapeCharsRegex (see below)
 
 Returns the passed patternString with all RegExp tokens escaped.
