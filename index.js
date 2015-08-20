@@ -1,9 +1,8 @@
 /**
- * @file Exports a simple function that will escape a string literal for use as an
- * argument in the standard JS RegExp object constructor.
+ * @file Exports a simple function that will escape a string literal for use as
+ * an argument in the standard JS RegExp constructor.
  * @module escape-regex-string
- * @author monotonee <monotonee@users.noreply.github.com>
- * @version 0.0.0
+ * @author monotonee <monotonee@tuta.io>
  * @license MIT
  */
 
@@ -12,13 +11,13 @@
 var defaultEscapeCharsRegex =  /[\-|\\{}()\[\]\^$+*?.]/g;
 
 /**
- * Escapes a string literal for use as an argument in the standard JS RegExp object constructor
+ * Escapes a string literal for use as an argument in the standard RegExp constructor.
  * @alias module:escape-regex-string
- * @param {string} patternString The string containing a regex pattern that needs to be escaped.
- * @param {RegExp} [escapeCharsRegex] An optional RegEx pattern containing a set of characters
- * to escape. If not passed, value will be set to default.
+ * @param {string} patternString The string containing a regex pattern to be escaped.
+ * @param {RegExp} [escapeCharsRegex] An optional RegEx pattern containing a set
+ * of characters to escape. If not passed, value will be set to default.
  * @return {string} The escaped regex pattern string.
- * @see {@link https://github.com/jscs-dev/node-jscs/issues/778}
+ * @throws {TypeError} Arguments must be correct type.
  */
 function escapeRegexString(unescapedString, escapeCharsRegex) {
   // Validate arguments.
@@ -39,7 +38,8 @@ function escapeRegexString(unescapedString, escapeCharsRegex) {
  * @name escapeRegexString.defaultEscapeCharsRegex
  * A read-only property that contains the default escape character RegExp instance.
  * The value of this property is the value used when the optional second argument
- * is omitted in a call to {@link module:escape-regex-string}. JSDoc fails to parse this properly.
+ * is omitted in a call to {@link module:escape-regex-string}. JSDoc fails to
+ * parse this properly due to the use of Object.defineProperty.
  * @readonly
  * @static
  * @type {RegExp}
