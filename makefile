@@ -10,7 +10,7 @@ DOC_DEST=./docs
 
 .PHONY: test
 
-all: lint style test npm-check-updates
+all: lint style test
 
 clean:
 	rm -R $(DOC_DEST)
@@ -20,9 +20,6 @@ docs: $(BIN)/jsdoc $(ALL_SRC)
 
 lint: $(BIN)/jshint $(ALL_SRC)
 	$< $(ALL_SRC) --verbose
-
-npm-check-updates: $(BIN)/npm-check-updates
-	$<
 
 style: $(BIN)/jscs $(ALL_SRC)
 	$< $(ALL_SRC) --verbose --no-color
