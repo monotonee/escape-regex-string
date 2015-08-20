@@ -30,7 +30,7 @@ test/
 
 # Misc
 Contributing.md
-makefile
+Makefile
 
 # IDE files
 .DS_Store
