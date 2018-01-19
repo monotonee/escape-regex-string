@@ -1,17 +1,12 @@
+# Some files, such as the node_modules directory, are always ignored.
+# https://docs.npmjs.com/files/package.json#files
+
 # Logs
 logs
 *.log
 
-# Runtime data
-pids
-*.pid
-*.seed
-
-# Grunt intermediate storage (http://gruntjs.com/creating-plugins#storing-task-files)
-.grunt
-
-# Compiled binary addons (http://nodejs.org/api/addons.html)
-build/Release
+# Local Vagrant state files
+.vagrant
 
 # Config files
 .git*
@@ -21,16 +16,9 @@ build/Release
 .travis.yml
 
 # Dev directories
-benchmarks/
-coverage/
-docs/
-examples/
-support/
-test/
+# Ignore docs directory as it is generated at will by running jsdoc task
+docs
+test
 
 # Misc
-Contributing.md
 Makefile
-
-# IDE files
-.DS_Store
