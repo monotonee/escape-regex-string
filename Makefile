@@ -17,8 +17,8 @@ clean:
 docs: $(BIN)/jsdoc $(ALL_SRC)
 	$< $(ALL_SRC) --verbose --destination $(DOC_DEST)
 
-lint: $(BIN)/jshint $(ALL_SRC)
-	$< $(ALL_SRC) --verbose
+lint: $(BIN)/eslint $(ALL_SRC)
+	$< $(ALL_SRC) --no-color
 
 style: $(BIN)/jscs $(ALL_SRC)
 	$< $(ALL_SRC) --verbose --no-color
