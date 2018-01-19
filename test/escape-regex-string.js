@@ -27,33 +27,14 @@ describe('escape-regex-string', function() {
     });
 
     it('should not accept invalid arguments', function() {
-        // Define locally-scoped function to catch TypeError exceptions in the following tests.
-        function rethrowExceptionIfNotTypeError(exceptionObject) {
-            // Depending on short-circuit evaluation in condition.
-            if (Object.prototype.toString.call(exceptionObject) !== '[object Error]' ||
-                exceptionObject instanceof TypeError === false
-            ) {
-                throw exceptionObject;
-            }
-        }
-
-        // Attempt to pass invalid first argument.
-        try {
-            dependencies.escapeRegexString(42);
-            throw new Error('Invalid first (string) argument passed but no exception thrown.');
-        }
-        catch (exceptionObject) {
-            rethrowExceptionIfNotTypeError(exceptionObject);
-        }
-
-        // Attempt to pass invalid second argument.
-        try {
-            dependencies.escapeRegexString('dik-dik', 42);
-            throw new Error('Invalid second (RegExp) argument passed but no exception thrown.');
-        }
-        catch (exceptionObject) {
-            rethrowExceptionIfNotTypeError(exceptionObject);
-        }
+        dependencies.assert.throws(
+            dependencies.escapeRegexString.bind(42),
+            TypeError
+        );
+        dependencies.assert.throws(
+            dependencies.escapeRegexString.bind('VFA-103', 42),
+            TypeError
+        );
     });
 
     describe('.defaultEscapeCharsRegex', function() {
