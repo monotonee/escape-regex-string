@@ -27,14 +27,8 @@ describe('escape-regex-string', function() {
     });
 
     it('should not accept invalid arguments', function() {
-        dependencies.assert.throws(
-            dependencies.escapeRegexString.bind(42),
-            TypeError
-        );
-        dependencies.assert.throws(
-            dependencies.escapeRegexString.bind('VFA-103', 42),
-            TypeError
-        );
+        dependencies.assert.throws(dependencies.escapeRegexString.bind(42), TypeError);
+        dependencies.assert.throws(dependencies.escapeRegexString.bind('VFA-103', 42), TypeError);
     });
 
     describe('.defaultEscapeCharsRegex', function() {
@@ -46,9 +40,7 @@ describe('escape-regex-string', function() {
 
         it('should contain a readable RegExp object', function() {
             dependencies.assert.strictEqual(
-                Object.prototype.toString.call(
-                    dependencies.escapeRegexString.defaultEscapeCharsRegex
-                ),
+                Object.prototype.toString.call(dependencies.escapeRegexString.defaultEscapeCharsRegex),
                 '[object RegExp]'
             );
         });

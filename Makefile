@@ -1,6 +1,3 @@
-# I'm new at this. Suggestions welcome.
-# https://github.com/monotonee/escape-regex-string/issues
-
 BIN=$(shell npm bin)
 DOC_DEST=./docs
 MODULE=./index.js
