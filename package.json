@@ -1,35 +1,35 @@
 {
-  "name": "escape-regex-string",
-  "version": "1.0.4",
-  "description": "Escapes a string literal for use as an argument in the standard RegExp constructor.",
-  "keywords": [
-    "regex",
-    "RegExp",
-    "escape",
-    "string"
-  ],
-  "homepage": "https://github.com/monotonee/escape-regex-string/",
-  "bugs": {
-    "url": "https://github.com/monotonee/escape-regex-string/issues"
-  },
-  "license": "MIT",
-  "author": "monotonee <monotonee@tuta.io>",
-  "main": "escape-regex-string.js",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/monotonee/escape-regex-string.git"
-  },
-  "dependencies": {},
-  "devDependencies": {
-    "eslint": "~4",
-    "jsdoc": "~3",
-    "jshint": "~2",
-    "mocha": "~5"
-  },
-  "scripts": {
-    "test": "make"
-  },
-  "engines": {
-    "node": ">=0.10"
-  }
+    "name": "escape-regex-string",
+    "version": "1.0.4",
+    "description": "Escapes a string literal for use as an argument in the standard RegExp constructor.",
+    "keywords": [
+        "regex",
+        "RegExp",
+        "escape",
+        "string"
+    ],
+    "homepage": "https://github.com/monotonee/escape-regex-string/",
+    "bugs": {
+        "url": "https://github.com/monotonee/escape-regex-string/issues"
+    },
+    "license": "MIT",
+    "author": "monotonee <monotonee@tuta.io>",
+    "main": "escape-regex-string.js",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/monotonee/escape-regex-string.git"
+    },
+    "dependencies": {},
+    "devDependencies": {
+        "eslint": "~4",
+        "jsdoc": "~3",
+        "jshint": "~2",
+        "mocha": "~5"
+    },
+    "scripts": {
+        "test": "make"
+    },
+    "engines": {
+        "node": ">=0.10"
+    }
 }
