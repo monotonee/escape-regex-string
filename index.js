@@ -8,7 +8,7 @@
 
 'use strict';
 
-var defaultEscapeCharsRegex =  /[\-|\\{}()\[\]\^$+*?.]/g;
+var defaultEscapeCharsRegex =  /[-|\\{}()[\]^$+*?.]/g;
 
 /**
  * Escapes a string literal for use as an argument in the standard RegExp constructor.
@@ -20,18 +20,18 @@ var defaultEscapeCharsRegex =  /[\-|\\{}()\[\]\^$+*?.]/g;
  * @throws {TypeError} Arguments must be correct type.
  */
 function escapeRegexString(unescapedString, escapeCharsRegex) {
-  // Validate arguments.
-  if (Object.prototype.toString.call(unescapedString) !== '[object String]') {
-    throw new TypeError('Argument 1 should be a string.');
-  }
-  if (escapeCharsRegex === undefined) {
-    escapeCharsRegex = defaultEscapeCharsRegex;
-  } else if (Object.prototype.toString.call(escapeCharsRegex) !== '[object RegExp]') {
-    throw new TypeError('Argument 2 should be a RegExp object.');
-  }
+    // Validate arguments.
+    if (Object.prototype.toString.call(unescapedString) !== '[object String]') {
+        throw new TypeError('Argument 1 should be a string.');
+    }
+    if (escapeCharsRegex === undefined) {
+        escapeCharsRegex = defaultEscapeCharsRegex;
+    } else if (Object.prototype.toString.call(escapeCharsRegex) !== '[object RegExp]') {
+        throw new TypeError('Argument 2 should be a RegExp object.');
+    }
 
-  // Escape the string.
-  return unescapedString.replace(escapeCharsRegex, '\\$&');
+    // Escape the string.
+    return unescapedString.replace(escapeCharsRegex, '\\$&');
 }
 
 /**
@@ -45,14 +45,14 @@ function escapeRegexString(unescapedString, escapeCharsRegex) {
  * @type {RegExp}
  */
 Object.defineProperty(
-  escapeRegexString,
-  'defaultEscapeCharsRegex',
-  {
-    configurable: false,
-    enumerable: true,
-    value: defaultEscapeCharsRegex,
-    writable: false
-  }
+    escapeRegexString,
+    'defaultEscapeCharsRegex',
+    {
+        configurable: false,
+        enumerable: true,
+        value: defaultEscapeCharsRegex,
+        writable: false
+    }
 );
 
 module.exports = escapeRegexString;
