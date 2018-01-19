@@ -8,27 +8,28 @@
     "escape",
     "string"
   ],
+  "homepage": "https://github.com/monotonee/escape-regex-string/",
   "bugs": {
     "url": "https://github.com/monotonee/escape-regex-string/issues"
   },
   "license": "MIT",
   "author": "monotonee <monotonee@tuta.io>",
-  "main": "index.js",
+  "main": "escape-regex-string.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/monotonee/escape-regex-string.git"
   },
+  "dependencies": {},
   "devDependencies": {
-    "jscs": "^2.1.0",
-    "jsdoc": "^3.3.2",
-    "jshint": "^2.8.0",
-    "mocha": "^2.2.5"
+    "jscs": "~3",
+    "jsdoc": "~3",
+    "jshint": "~2",
+    "mocha": "~5"
   },
   "scripts": {
     "test": "make"
   },
   "engines": {
-    "iojs": ">=1.0.0",
     "node": ">=0.10"
   }
 }
