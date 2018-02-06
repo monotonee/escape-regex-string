@@ -1,5 +1,3 @@
-/* global describe, it */
-
 var dependencies = {
     assert: require('assert'),
     escapeRegexString: require('../index')
@@ -19,7 +17,7 @@ describe('escape-regex-string', function() {
     });
 
     it('should use optional RegExp argument when passed instead of default', function() {
-        // Remove the hyphen character from the regex pattern.
+        // Remove the hyphen character from the default regex pattern.
         dependencies.assert.strictEqual(
             dependencies.escapeRegexString('- | \\ { } ( ) [ ] ^ $ + * ? .', /[|\\{}()[\]^$+*?.]/g),
             '- \\| \\\\ \\{ \\} \\( \\) \\[ \\] \\^ \\$ \\+ \\* \\? \\.'
