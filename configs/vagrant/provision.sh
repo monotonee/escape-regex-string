@@ -105,9 +105,9 @@ done
 # Project-specific tasks
 # The daemon.json file was uploaded into machine from host with the Vagrant "file" provisioner.
 # See: https://docs.docker.com/engine/reference/commandline/dockerd/#linux-configuration-file
-echo 'TASK: Install package dev dependencies.'
-# cd ${src_dir}
-# su ${default_user} -c 'npm install requirements/dev.txt'
+echo 'TASK: Install package dependencies.'
+cd ${src_dir}
+su ${default_user} -c 'npm install'
 
 # Reboot system.
 # Actual reboot removed for now since rebooting outside of Vagrant's control
