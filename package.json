@@ -23,7 +23,6 @@
     "devDependencies": {
         "eslint": "~4",
         "jsdoc": "~3",
-        "jshint": "~2",
         "mocha": "~5"
     },
     "scripts": {

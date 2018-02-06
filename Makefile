@@ -4,9 +4,9 @@ MODULE=./index.js
 TESTS=$(wildcard ./test/*.js)
 ALL_SRC=$(MODULE) $(TESTS)
 
-.PHONY: all clean docs lint style test
+.PHONY: all clean docs lint test
 
-all: lint style test
+all: lint test
 
 clean:
 	rm -Rf $(DOC_DEST)
@@ -17,8 +17,5 @@ docs: $(BIN)/jsdoc $(ALL_SRC)
 lint: $(BIN)/eslint $(ALL_SRC)
 	$< $(ALL_SRC) --no-color
 
-style: $(BIN)/jscs $(ALL_SRC)
-	$< $(ALL_SRC) --verbose --no-color
-
-test: $(BIN)/mocha
+test: $(BIN)/mocha $(TESTS)
 	$< $(TESTS) --no-colors --check-leaks

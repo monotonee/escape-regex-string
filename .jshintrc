@@ -1,6 +1,0 @@
-{
-  "enforceall": true,
-  "nocomma": false,
-  "mocha": true,
-  "node": true
-}
