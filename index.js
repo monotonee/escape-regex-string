@@ -8,7 +8,7 @@
 
 'use strict';
 
-var defaultEscapeCharsRegex =  /[-|\\{}()[\]^$+*?.]/g;
+var defaultEscapeCharsRegex = /[-|\\{}()[\]^$+*?.]/g;
 
 /**
  * Escape a string literal for use as an argument in the standard RegExp constructor.

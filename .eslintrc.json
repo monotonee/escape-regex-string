@@ -20,6 +20,7 @@
                 "code": 120
             }
         ],
+        "no-multi-spaces": "error",
         "quotes": [
             "error",
             "single"
