@@ -13,7 +13,7 @@ var defaultEscapeCharsRegex = /[-|\\{}()[\]^$+*?.]/g;
 /**
  * Escape a string literal for use as an argument in the standard RegExp constructor.
  * @alias module:escape-regex-string
- * @param {string} patternString - The string containing a regex pattern to be escaped.
+ * @param {string} unescapedString - The string containing a regex pattern to be escaped.
  * @param {RegExp} [escapeCharsRegex] - An optional RegEx pattern containing a set of characters to escape. If not
  * passed, value will be set to default.
  * @return {string} - The escaped regex pattern string.

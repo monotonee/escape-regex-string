@@ -5,13 +5,13 @@ Escapes a string literal for use as an argument in the standard RegExp construct
 
 #### escape-regex-string
 ```javascript
-(require('escape-regex-string'))(patternString[, escapeCharsRegex])
+(require('escape-regex-string'))(unescapedString[, escapeCharsRegex])
 ```
-* patternString String
+* unescapedString String
 * escapeCharsRegex RegExp
   * Defaults to value of member escape-regex-string.defaultEscapeCharsRegex (see below)
 
-Returns the passed patternString with all RegExp tokens escaped.
+Returns the passed unescapedString with all RegExp special characters escaped.
 
 #### escape-regex-string.defaultEscapeCharsRegex
 ```javascript
