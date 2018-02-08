@@ -1,6 +1,6 @@
 {
     "name": "escape-regex-string",
-    "version": "1.0.5",
+    "version": "1.0.6",
     "description": "Escapes a string literal for use as an argument in the standard RegExp constructor.",
     "keywords": [
         "regex",

@@ -13,3 +13,6 @@ node_modules
 
 # npm package lock file which is unnecessary in this context.
 package-lock.json
+
+# npm-pack output archives
+**/*.tgz

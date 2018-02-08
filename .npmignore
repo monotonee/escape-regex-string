@@ -9,6 +9,7 @@ logs
 .vagrant
 
 # Config files
+.eslintrc.json
 .git*
 .jscsrc
 .npmignore
@@ -20,4 +21,7 @@ docs
 test
 
 # Misc
+**/*.tgz
+configs
 Makefile
+Vagrantfile
