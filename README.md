@@ -1,4 +1,4 @@
-# escape-regex-string [![Build Status](https://travis-ci.org/monotonee/escape-regex-string.svg?branch=master)](https://travis-ci.org/monotonee/escape-regex-string) [![npm version](https://badge.fury.io/js/escape-regex-string.svg)](https://badge.fury.io/js/escape-regex-string)
+# escape-regex-string [![Build Status](https://travis-ci.org/monotonee/escape-regex-string.svg?branch=master)](https://travis-ci.org/monotonee/escape-regex-string) [![npm version](https://badge.fury.io/js/escape-regex-string.svg)](https://www.npmjs.com/package/escape-regex-string)
 Escapes a string literal for use as an argument in the standard RegExp constructor.
 
 ## Interface
