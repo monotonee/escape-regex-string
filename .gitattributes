@@ -1,0 +1,4 @@
+# Prevent Vagrant provisioning files from being used to determine GitHub repo language type.
+# Without this rule, GitHub labels the repo as predominantly "shell", where it should be "JavaScript".
+# https://github.com/github/linguist#overrides
+configs/** linguist-detectable=false
