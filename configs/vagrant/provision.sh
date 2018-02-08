@@ -107,7 +107,7 @@ done
 # See: https://docs.docker.com/engine/reference/commandline/dockerd/#linux-configuration-file
 echo 'TASK: Install package dependencies.'
 cd ${src_dir}
-su ${default_user} -c 'npm install'
+su ${default_user} -c 'npm install --no-package-lock --no-save'
 
 # Reboot system.
 # Actual reboot removed for now since rebooting outside of Vagrant's control
