@@ -10,3 +10,6 @@ docs
 
 # Dependency directory
 node_modules
+
+# npm package lock file which is unnecessary in this context.
+package-lock.json
