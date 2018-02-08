@@ -34,6 +34,60 @@ let regExpObject = new RegExp(escapedRegexPatternString);
 console.log(regExpObject); // /\$&\*\(\)awsd/
 ```
 
+## Explanation
+The built-in JavaScript [RegExp](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp)
+object's constructor accepts a regular expression pattern in the form of another RegExp instance **or a string.** And,
+as we know, the JavaScript regular expression syntax includes a set of characters with special meaning when interpreted
+by the regex engine, such as the caret (^) and the asterisk (*). A problem is introduced when one attempts to create a
+regular expression pattern in a *string* (*not* a
+[RegExp literal](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp#Description)),
+for use in the RegExp constructor, that contains special regular expression characters *to be matched literally.*
+Consider the following extra-verbose example:
+
+A developer wants to use a RegExp to match caret characters in a given string:
+```javascript
+let inputStr = 'a^2';
+```
+For whatever reason, the dev is unwilling or unable to use the RegExp literal syntax and therefore attempts to define a
+regular expression pattern *in a string* to be passed to the RegExp constructor:
+```javascript
+let firstPattern = '^';
+let firstRegExp = new RegExp(firstPattern);
+```
+When the expression is evaluated, the results are incorrect because the caret is a regular expression special character
+representing the [beginning of the input](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions#special-caret).
+The beginning of the subject string will therefore be the only match:
+```javascript
+let firstResult = firstRegExp.exec(inputStr);
+console.log(firstResult); // [ '', index: 0, input: 'a^2' ]
+```
+The developer realizes he needs to escape the special caret character and therefore redefines his pattern with the
+standard backslash escape character:
+```javascript
+let secondPattern = '\^';
+let secondRegExp = new RegExp(secondPattern);
+let secondResult = secondRegExp.exec(inputStr);
+console.log(secondResult); // [ '', index: 0, input: 'a^2' ]
+```
+When the developer evaluates the second expression, however, the results are the same. This is because JavaScript *will
+first evaluate the backslash escape character in the pattern string,* before it ever reaches the RegExp constructor.
+When the developer eexamines the second pattern string, it is identical to the first despite the added backslash.
+```javascript
+console.log(firstPattern === secondPattern); // true
+```
+Finally, the developer adds a second backslash to the pattern string, causing the JavaScript interpreter to preserve a
+single backslash character in the string stored in memory. This single backslash is successfully passed to the RegExp
+constructor, the expression therefore interprets the caret character literally, and the caret is correctly matched
+inside the input string:
+```javascript
+let finalPattern = '\\^';
+let finalRegExp = new RegExp(finalPattern);
+let finalResult = finalRegExp.exec(inputStr);
+console.log(finalResult); // [ '^', index: 1, input: 'a^2' ]
+```
+This is essentially a simple case of double-escaping. This module simply saves developers the trouble of determining the
+set of JavaScript's regular expression special characters and writing a function to escape them.
+
 ## Development
 
 To set up an optional development environment, a Vagrantfile is included. Install [Vagrant](https://www.vagrantup.com)
