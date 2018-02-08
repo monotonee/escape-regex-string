@@ -8,6 +8,7 @@
 
 'use strict';
 
+// This is temporarily declared with "var" instead of "const" to maintain the absolute broadest compatibility.
 var defaultEscapeCharsRegex = /[-|\\{}()[\]^$+*?.]/g;
 
 /**
