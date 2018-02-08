@@ -1,6 +1,6 @@
 {
     "name": "escape-regex-string",
-    "version": "1.0.4",
+    "version": "1.0.5",
     "description": "Escapes a string literal for use as an argument in the standard RegExp constructor.",
     "keywords": [
         "regex",
@@ -14,7 +14,7 @@
     },
     "license": "MIT",
     "author": "monotonee <monotonee@tuta.io>",
-    "main": "escape-regex-string.js",
+    "main": "index.js",
     "repository": {
         "type": "git",
         "url": "https://github.com/monotonee/escape-regex-string.git"
