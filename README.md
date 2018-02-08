@@ -2,6 +2,7 @@
 Escapes a string literal for use as an argument in the standard RegExp constructor.
 
 ## Interface
+
 #### escape-regex-string
 ```javascript
 (require('escape-regex-string'))(patternString[, escapeCharsRegex])
@@ -11,6 +12,7 @@ Escapes a string literal for use as an argument in the standard RegExp construct
   * Defaults to value of member escape-regex-string.defaultEscapeCharsRegex (see below)
 
 Returns the passed patternString with all RegExp tokens escaped.
+
 #### escape-regex-string.defaultEscapeCharsRegex
 ```javascript
 (require('escape-regex-string')).defaultEscapeCharsRegex
