@@ -28,5 +28,16 @@ var regExpObject = new RegExp(escapedRegexString);
 console.log(regExpObject); // /\$&\*\(\)awsd/
 ```
 
+## Development
+To set up an optional development environment, a Vagrantfile is included. Install [Vagrant](https://www.vagrantup.com)
+and run:
+```sh
+vagrant up
+ ```
+Once Vagrant has completed provisioning, `vagrant ssh` into the box and run the tests with:
+```sh
+make
+```
+
 ## Feedback
 I wrote this miniature module to practice with a few of the tools, libraries, and workflows available to JS developers. I welcome constructive criticism and advice.
